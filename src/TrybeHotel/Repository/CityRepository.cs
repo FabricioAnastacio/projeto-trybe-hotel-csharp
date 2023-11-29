@@ -17,6 +17,7 @@ namespace TrybeHotel.Repository
             var allCities = from city in _context.Cities
                         select new CityDto {
                             CityId = city.CityId,
+                            State = city.State,
                             Name = city.Name
                         };
 
