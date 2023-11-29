@@ -45,7 +45,14 @@ namespace TrybeHotel.Repository
         // 3. Desenvolva o endpoint PUT /city
         public CityDto UpdateCity(City city)
         {
-           throw new NotImplementedException();
+            _context.Cities.Update(city);
+            _context.SaveChanges();
+
+            return new CityDto {
+                CityId = city.CityId,
+                Name = city.Name,
+                State = city.State
+            };
         }
 
     }
