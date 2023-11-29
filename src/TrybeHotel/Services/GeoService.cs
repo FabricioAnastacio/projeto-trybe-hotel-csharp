@@ -33,13 +33,58 @@ namespace TrybeHotel.Services
         // 12. Desenvolva o endpoint GET /geo/address
         public async Task<GeoDtoResponse> GetGeoLocation(GeoDto geoDto)
         {
-            throw new NotImplementedException();
+            var request = new HttpRequestMessage(
+                HttpMethod.Get,
+                $"https://nominatim.openstreetmap.org/search?street={geoDto.Address}&city={geoDto.City}&country=Brazil&state={geoDto.State}&format=json&limit=1"
+            );
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("User-Agent", "aspnet-user-agent");
+
+            var response = await _client.SendAsync(request);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<GeoDtoResponse[]>();
+                return result![0];
+            }
+
+            return default(GeoDtoResponse)!;
         }
 
         // 12. Desenvolva o endpoint GET /geo/address
         public async Task<List<GeoDtoHotelResponse>> GetHotelsByGeo(GeoDto geoDto, IHotelRepository repository)
         {
-            throw new NotImplementedException();
+            GeoDtoResponse locationOrigin = await GetGeoLocation(geoDto);
+
+            var listHotels = repository.GetHotels().Select(async (hotel) => {
+                GeoDto hotelLocation = new() {
+                    Address = hotel.Address,
+                    City = hotel.CityName,
+                    State = hotel.State
+                };
+
+                var locationHotel = await GetGeoLocation(hotelLocation);
+                return new GeoDtoHotelResponse {
+                    HotelId = hotel.HotelId,
+                    Name = hotel.Name,
+                    Address = hotel.Address,
+                    CityName = hotel.CityName,
+                    State = hotel.State,
+                    Distance = CalculateDistance(
+                        locationOrigin.lat!,
+                        locationOrigin.lon!,
+                        locationHotel.lat!,
+                        locationHotel.lon!
+                    )
+                };
+            });
+
+            GeoDtoHotelResponse[] correctListHotel = await Task.WhenAll(listHotels);
+
+            List<GeoDtoHotelResponse> listAllHotels = new();
+            listAllHotels.AddRange(correctListHotel);
+
+            return listAllHotels.OrderBy(item => item.Distance).ToList();
         }
 
        
