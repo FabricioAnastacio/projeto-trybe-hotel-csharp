@@ -11,7 +11,6 @@ namespace TrybeHotel.Repository
             _context = context;
         }
 
-        // 4. Desenvolva o endpoint GET /hotel
         public IEnumerable<HotelDto> GetHotels()
         {
             var allHotels = from hotel in _context.Hotels
@@ -22,7 +21,8 @@ namespace TrybeHotel.Repository
                                 Name = hotel.Name,
                                 Address = hotel.Address,
                                 CityId = city.CityId,
-                                CityName = city.Name
+                                CityName = city.Name,
+                                State = city.State
                             };
 
             return allHotels;
