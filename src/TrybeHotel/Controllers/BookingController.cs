@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using TrybeHotel.Dto;
+using System.Reflection.Metadata.Ecma335;
 
 namespace TrybeHotel.Controllers
 {
@@ -21,18 +22,39 @@ namespace TrybeHotel.Controllers
         }
 
         [HttpPost]
+        [Authorize("Client")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [Authorize(Policy = "Client")]
         public IActionResult Add([FromBody] BookingDtoInsert bookingInsert){
-            throw new NotImplementedException();
+            try
+            {
+                var token = HttpContext.User.Identity as ClaimsIdentity;
+                var email = token!.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
+                
+                BookingResponse newBooking = _repository.Add(bookingInsert, email!);
+                return Created("", newBooking);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = e.Message });
+            }
+
         }
 
 
         [HttpGet("{Bookingid}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [Authorize(Policy = "Client")]
         public IActionResult GetBooking(int Bookingid){
-            throw new NotImplementedException();
+            try
+            {
+                var token = HttpContext.User.Identity as ClaimsIdentity;
+                var email = token!.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
+                
+                BookingResponse booking = _repository.GetBooking(Bookingid, email!);
+                return Ok(booking);
+            }
+            catch (Exception)
+            {
+                return Unauthorized();
+            }
         }
     }
 }

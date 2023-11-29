@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using TrybeHotel.Models;
 using TrybeHotel.Repository;
 using TrybeHotel.Dto;
-using TrybeHotel.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -13,23 +12,25 @@ namespace TrybeHotel.Controllers
     public class HotelController : Controller
     {
         private readonly IHotelRepository _repository;
-  
+
         public HotelController(IHotelRepository repository)
         {
             _repository = repository;
         }
         
+        // 4. Desenvolva o endpoint GET /hotel
         [HttpGet]
         public IActionResult GetHotels(){
-            throw new NotImplementedException();
+            return Ok(_repository.GetHotels());
         }
 
+        // 5. Desenvolva o endpoint POST /hotel
         [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Authorize(Policy = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult PostHotel([FromBody] Hotel hotel){
-            throw new NotImplementedException();
+            var newHotel = _repository.AddHotel(hotel);
+            return Created("", newHotel);
         }
-
     }
 }
