@@ -61,9 +61,9 @@ namespace TrybeHotel.Repository
                             where hotel.HotelId == room.HotelId
                             select hotel).ToList()[0];
 
-            string nameCity = (from city in _context.Cities
+            City newCity = (from city in _context.Cities
                            where city.CityId == newHotel.CityId
-                           select city).ToList()[0].Name;
+                           select city).ToList()[0];
 
             return new BookingResponse {
                 BookingId = bookingResponse.BookingId,
@@ -80,7 +80,8 @@ namespace TrybeHotel.Repository
                         Name = newHotel.Name,
                         Address = newHotel.Address,
                         CityId = newHotel.CityId,
-                        CityName = nameCity
+                        CityName = newCity.Name,
+                        State = newCity.State
                     }
                 }
             };
