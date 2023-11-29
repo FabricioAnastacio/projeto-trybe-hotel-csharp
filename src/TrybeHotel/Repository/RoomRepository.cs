@@ -11,7 +11,6 @@ namespace TrybeHotel.Repository
             _context = context;
         }
 
-        // 6. Desenvolva o endpoint GET /room/:hotelId
         public IEnumerable<RoomDto> GetRooms(int HotelId)
         {
             HotelRepository newHotel = new(_context);
@@ -30,7 +29,6 @@ namespace TrybeHotel.Repository
             return allRooms;
         }
 
-        // 7. Desenvolva o endpoint POST /room
         public RoomDto AddRoom(Room room) {
             try
             {
@@ -45,7 +43,6 @@ namespace TrybeHotel.Repository
             }
         }
 
-        // 8. Desenvolva o endpoint DELETE /room/:roomId
         public void DeleteRoom(int RoomId) {
             Room roomDelet = _context.Rooms.First((room) => room.RoomId == RoomId);
             _context.Rooms.Remove(roomDelet);

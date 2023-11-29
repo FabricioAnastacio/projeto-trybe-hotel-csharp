@@ -28,7 +28,6 @@ namespace TrybeHotel.Repository
             return allHotels;
         }
         
-        // 5. Desenvolva o endpoint POST /hotel
         public HotelDto AddHotel(Hotel hotel)
         {
             try
