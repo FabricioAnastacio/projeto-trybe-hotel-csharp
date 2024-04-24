@@ -25,20 +25,19 @@ builder.Services.AddHttpClient<IGeoService, GeoService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews()
-                .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddHttpClient();
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy  =>
-                      {
-                          policy.WithOrigins("https://nominatim.openstreetmap.org",
-                                              "https://openstreetmap.org");
-                      });
+        policy => 
+        {
+            policy.WithOrigins("https://nominatim.openstreetmap.org","https://openstreetmap.org");
+        }
+    );
 });
-
 
 builder.Services.Configure<TokenOptions>(
     builder.Configuration.GetSection(TokenOptions.Token)
@@ -80,7 +79,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseHttpsRedirection();
 app.UseRouting();
 
@@ -90,7 +88,6 @@ app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UseAuthentication();
 
 app.UseAuthorization();
-
 
 app.MapControllers();
 
