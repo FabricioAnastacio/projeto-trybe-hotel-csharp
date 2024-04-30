@@ -1,4 +1,4 @@
-# Projeto Trybe Futebol Clube 
+# Projeto Trybe Hotel
 
 # Sobre o projeto
 
