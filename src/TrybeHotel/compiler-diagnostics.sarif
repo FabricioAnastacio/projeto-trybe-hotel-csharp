@@ -30,6 +30,69 @@
         {
           "ruleId": "CS8618",
           "level": "warning",
+          "message": "O propriedade não anulável 'Secret' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Services/TokenOptions.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 23,
+                  "endLine": 6,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "Este método assíncrono não possui operadores 'await' e será executado de modo síncrono. É recomendável o uso do operador 'await' para aguardar chamadas à API desbloqueadas ou do operador 'await Task.Run(...)' para realizar um trabalho associado à CPU em um thread em segundo plano.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Controllers/GeoController.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 42,
+                  "endLine": 27,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS1998",
+          "level": "warning",
+          "message": "Este método assíncrono não possui operadores 'await' e será executado de modo síncrono. É recomendável o uso do operador 'await' para aguardar chamadas à API desbloqueadas ou do operador 'await Task.Run(...)' para realizar um trabalho associado à CPU em um thread em segundo plano.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Controllers/GeoController.cs",
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 42,
+                  "endLine": 37,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
           "message": "O propriedade não anulável 'Email' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
           "locations": [
             {
@@ -61,27 +124,6 @@
                   "startColumn": 23,
                   "endLine": 20,
                   "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "O propriedade não anulável 'Secret' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Services/TokenOptions.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 23,
-                  "endLine": 6,
-                  "endColumn": 29
                 }
               }
             }
@@ -156,6 +198,27 @@
         {
           "ruleId": "CS8618",
           "level": "warning",
+          "message": "O propriedade não anulável 'Room' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/BookingDto.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 24,
+                  "endLine": 17,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
           "message": "O propriedade não anulável 'Name' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
           "locations": [
             {
@@ -208,6 +271,48 @@
                   "startColumn": 23,
                   "endLine": 9,
                   "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'Name' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/CityDto.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 23,
+                  "endLine": 7,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "O propriedade não anulável 'State' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/CityDto.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 23,
+                  "endLine": 8,
+                  "endColumn": 28
                 }
               }
             }
@@ -334,111 +439,6 @@
                   "startColumn": 23,
                   "endLine": 8,
                   "endColumn": 28
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "O propriedade não anulável 'Name' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/CityDto.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 23,
-                  "endLine": 7,
-                  "endColumn": 27
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "O propriedade não anulável 'State' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/CityDto.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 23,
-                  "endLine": 8,
-                  "endColumn": 28
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS8618",
-          "level": "warning",
-          "message": "O propriedade não anulável 'Room' precisa conter um valor não nulo ao sair do construtor. Considere declarar o propriedade como anulável.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Dto/BookingDto.cs",
-                "region": {
-                  "startLine": 17,
-                  "startColumn": 24,
-                  "endLine": 17,
-                  "endColumn": 28
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS1998",
-          "level": "warning",
-          "message": "Este método assíncrono não possui operadores 'await' e será executado de modo síncrono. É recomendável o uso do operador 'await' para aguardar chamadas à API desbloqueadas ou do operador 'await Task.Run(...)' para realizar um trabalho associado à CPU em um thread em segundo plano.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Controllers/GeoController.cs",
-                "region": {
-                  "startLine": 27,
-                  "startColumn": 42,
-                  "endLine": 27,
-                  "endColumn": 51
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "CS1998",
-          "level": "warning",
-          "message": "Este método assíncrono não possui operadores 'await' e será executado de modo síncrono. É recomendável o uso do operador 'await' para aguardar chamadas à API desbloqueadas ou do operador 'await Task.Run(...)' para realizar um trabalho associado à CPU em um thread em segundo plano.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///home/far/Documentos/Trybe/Projetos/eletivas_in_c%23/csharp-029-csharp-projeto-trybe-hotel-fase-c/src/TrybeHotel/Controllers/GeoController.cs",
-                "region": {
-                  "startLine": 37,
-                  "startColumn": 42,
-                  "endLine": 37,
-                  "endColumn": 61
                 }
               }
             }
